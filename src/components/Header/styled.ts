@@ -1,3 +1,4 @@
+import MiniCart from "components/MiniCart";
 import styled from "styled-components";
 import breakpoints from "theme/breakpoints";
 
@@ -29,6 +30,13 @@ export const IconMiniCart = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+`;
+
+export const CustomMiniCart = styled(MiniCart)`
+
+    ${IconMiniCart}:hover &{
+        display: flex;
+    }
 `;
 
 
