@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from "@reduxjs/toolkit/query";
+import { productsApi } from './productsApi';
 import storeSlice from './storeSlice';
 
 export function setUpStore() {
     const store = configureStore({
       reducer: {
-          storeSlice
+          storeSlice,
+          [productsApi.reducerPath]: productsApi.reducer
       },
-      middleware: (gDM) => gDM()
+      middleware: (gDM) => gDM().concat(productsApi.middleware)
     });
   
     setupListeners(store.dispatch);

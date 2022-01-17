@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "routes";
+import GlobalStyle from "theme/global";
 import { Provider } from "react-redux";
 import store from "store";
 import "@fontsource/roboto/300.css";
@@ -13,6 +14,7 @@ ReactDOM.render(
     <Provider store={store}>
       <App />
     </Provider>
+    <GlobalStyle/>
   </>,
   document.getElementById("root")
 );
